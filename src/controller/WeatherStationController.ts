@@ -19,7 +19,7 @@ export class WeatherStationController {
                 weatherStation.coordinates = data.coordinates;
                 weatherStation.manufacturingDate = new Date();
 
-                res.status(200).send([await weatherStation.save()]);
+                res.status(201).send([await weatherStation.save()]);
             })
     }
 }
