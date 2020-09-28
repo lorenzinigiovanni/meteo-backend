@@ -6,7 +6,7 @@ export class WeatherData extends BaseEntity {
     @PrimaryGeneratedColumn()
     ID!: number;
 
-    @Column()
+    @Column({ type: 'uuid' })
     weatherStationID!: string;
 
     @Column({ type: 'timestamp' })
