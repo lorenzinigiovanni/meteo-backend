@@ -3,7 +3,7 @@ import './utility/Extensions';
 import { createConnection } from 'typeorm';
 import express from 'express';
 import cors from 'cors';
-import WeatherStationController from './controller/WeatherStationController';
+import { WeatherStationController } from './controller/WeatherStationController';
 
 export class Main {
 

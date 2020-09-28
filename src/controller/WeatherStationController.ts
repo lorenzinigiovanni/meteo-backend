@@ -4,7 +4,7 @@ import { JSONSchema } from '../utility/decorators/JSONSchema';
 
 import { WeatherStation } from '../entity/WeatherStation';
 
-export default class WeatherStationController {
+export class WeatherStationController {
 
     static route(app: express.Application): void {
         app.route('/weatherstations')
@@ -12,7 +12,7 @@ export default class WeatherStationController {
                 res.status(200).send(await WeatherStation.find());
             })
             .post(async (req, res) => {
-                const data = WeatherPost.fromJSON(req.body);
+                const data = WeatherStationPost.fromJSON(req.body);
 
                 const weatherStation = new WeatherStation();
                 weatherStation.name = data.name;
@@ -25,7 +25,7 @@ export default class WeatherStationController {
 }
 
 @JSONSchema()
-export class WeatherPost extends BaseRequest {
+export class WeatherStationPost extends BaseRequest {
     coordinates!: string;
     name!: string;
 }
