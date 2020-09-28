@@ -1,6 +1,9 @@
+import 'reflect-metadata';
+import './utility/Extensions';
 import { createConnection } from 'typeorm';
 import express from 'express';
 import cors from 'cors';
+import WeatherStationController from './controller/WeatherStationController';
 
 export class Main {
 
@@ -20,6 +23,8 @@ export class Main {
 
                 next();
             });
+
+            WeatherStationController.route(app);
 
             app.listen(3000);
             console.log('Express application is up and running on port 3000');
