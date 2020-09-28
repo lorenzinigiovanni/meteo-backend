@@ -1,0 +1,42 @@
+{
+  "name": "meteo-backend",
+  "version": "1.0.0",
+  "description": "AgroWeatherAI ORM/API",
+  "main": "index.js",
+  "scripts": {
+    "debug": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorenzinigiovanni/meteo-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lorenzinigiovanni/meteo-backend/issues"
+  },
+  "homepage": "https://github.com/lorenzinigiovanni/meteo-backend#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/express": "^4.17.8",
+    "@types/node": "^14.11.2",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "class-transformer": "^0.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "reflect-metadata": "^0.1.13",
+    "ts-json-schema-generator": "^0.74.0",
+    "typeorm": "^0.2.26"
+  }
+}
