@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import { WeatherStationController } from './controller/WeatherStationController';
 import { WeatherDataController } from './controller/WeatherDataController';
+import { UserController } from './controller/UserController';
 
 export class Main {
 
@@ -27,6 +28,7 @@ export class Main {
 
             WeatherStationController.route(app);
             WeatherDataController.route(app);
+            UserController.route(app);
 
             app.listen(3000);
             console.log('Express application is up and running on port 3000');
