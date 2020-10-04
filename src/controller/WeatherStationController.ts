@@ -21,6 +21,11 @@ export class WeatherStationController {
 
                 res.status(201).send([await weatherStation.save()]);
             })
+        app.route('/weatherstations/:ID')
+            .get(async (req, res) => {
+                const params = req.params;
+                res.status(200).send(await WeatherStation.find({ where: { ID: params['ID'] } }));
+            })
     }
 }
 
