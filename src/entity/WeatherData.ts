@@ -23,6 +23,6 @@ export class WeatherData extends BaseEntity {
     @Column({ type: 'real', nullable: true })
     rain?: number;
 
-    @ManyToOne(type => WeatherStation, weatherstation => weatherstation.weatherdatas)
-    weatherstationID!: WeatherStation;
+    @ManyToOne(() => WeatherStation, weatherstation => weatherstation.weatherdatas)
+    weatherstation!: WeatherStation;
 }

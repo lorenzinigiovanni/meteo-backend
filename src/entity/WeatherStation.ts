@@ -19,6 +19,6 @@ export class WeatherStation extends BaseEntity {
     @Column({ type: 'timestamp' })
     manufacturingDate!: Date;
 
-    @OneToMany(type => WeatherData, weatherdata => weatherdata.weatherstationID)
+    @OneToMany(() => WeatherData, weatherdata => weatherdata.weatherstation)
     weatherdatas!: WeatherData[];
 }

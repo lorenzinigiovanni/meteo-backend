@@ -21,7 +21,7 @@ export class WeatherDataController {
                 weatherData.humidity = data.humidity;
                 weatherData.pressure = data.pressure;
                 weatherData.rain = data.rain;
-                weatherData.weatherstationID = await WeatherStation.findOneOrFail(data.weatherstationID);
+                weatherData.weatherstation = await WeatherStation.findOneOrFail(data.weatherStationID);
 
                 res.status(201).send([await weatherData.save()]);
             })
@@ -29,7 +29,7 @@ export class WeatherDataController {
             .get(async (req, res) => {
                 const params = req.params;
                 const weatherStation = await WeatherStation.findOne(params['ID']);
-                res.status(200).send(await WeatherData.find({ where: { weatherstationID: weatherStation } }));
+                res.status(200).send(await WeatherData.find({ where: { weatherstation: weatherStation } }));
             })
     }
 }
