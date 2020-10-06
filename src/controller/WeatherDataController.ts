@@ -36,7 +36,7 @@ export class WeatherDataController {
 
 @JSONSchema()
 export class WeatherDataPost extends BaseRequest {
-    weatherstationID!: string;
+    weatherStationID!: string;
     time!: Date;
     temperature?: number;
     humidity?: number;
