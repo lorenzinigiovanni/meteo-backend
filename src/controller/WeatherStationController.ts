@@ -16,6 +16,7 @@ export class WeatherStationController {
 
                 const weatherStation = new WeatherStation();
                 weatherStation.name = data.name;
+                weatherStation.altitude = data.altitude;
                 weatherStation.coordinates = data.coordinates;
                 weatherStation.manufacturingDate = new Date();
 
@@ -33,4 +34,5 @@ export class WeatherStationController {
 export class WeatherStationPost extends BaseRequest {
     coordinates!: string;
     name!: string;
+    altitude?: number;
 }

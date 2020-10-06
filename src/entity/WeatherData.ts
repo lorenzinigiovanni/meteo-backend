@@ -1,13 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
+import { WeatherStation } from './WeatherStation';
+
 
 @Entity()
 export class WeatherData extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     ID!: number;
-
-    @Column({ type: 'uuid' })
-    weatherStationID!: string;
 
     @Column({ type: 'timestamp' })
     time!: Date;
@@ -23,4 +22,7 @@ export class WeatherData extends BaseEntity {
 
     @Column({ type: 'real', nullable: true })
     rain?: number;
+
+    @ManyToOne(type => WeatherStation, weatherstation => weatherstation.weatherdatas)
+    weatherstationID!: WeatherStation;
 }
